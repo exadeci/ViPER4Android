@@ -1,7 +1,7 @@
-id=template
-name=Template Module
-version=v1
+id=viper4android
+name=ViPER4Android FX for Magisk v13+
+version=v2.5.0.5
 versionCode=1
-author=topjohnwu
-description=A short description
+author=ShadySquirrel
+description=Pure Viper4Android module for Magisk v13+ - no frameworks, no patches, no frills.
 template=4
