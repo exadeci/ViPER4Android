@@ -103,8 +103,10 @@ $BOOTMODE && ! is_mounted /magisk && abort "! Magisk is not activated!"
 ##########################################################################################
 # Install
 ##########################################################################################
-
 request_zip_size_check "$ZIP"
+
+ui_print "- Extracting module files"
+unzip -o "$ZIP" "app/*" "drivers/*" -d $INSTALLER 2>/dev/null
 
 if [ -f "$IMG" ]; then
   ui_print "- $IMG detected!"
@@ -137,7 +139,13 @@ mkdir -p $MODPATH/system/priv-app/ViPER4Android 2>/dev/null
 
 # copy app
 ui_print "* Installing V4A Materialized app"
-cp -af $INSTALLER/app/ViPER4Android.apk $MODPATH/system/priv-app/ViPER4Android/ViPER4Android.apk
+APP=$INSTALLER/app/ViPER4Android.apk
+if [ -f $APP ]; then
+	cp -af $APP $MODPATH/system/priv-app/ViPER4Android/ViPER4Android.apk
+else
+	ui_print "!! ERROR !! Application package not found!"
+	exit 255
+fi
 
 # determine CPU arch and driver
 ui_print "* Determining your device's arch and installing driver"
@@ -154,7 +162,12 @@ ui_print "-> Your device is $ARCH, using $DRIVER"
 
 # copy driver
 ui_print "* Copying V4A driver"
-cp -af $LIB $MODPATH/system/lib/soundfx/libv4a_fx_ics.so
+if [ -f $LIB ]; then
+	cp -af $LIB $MODPATH/system/lib/soundfx/libv4a_fx_ics.so
+else
+	ui_print "!! ERROR !! Driver library not found!"
+	exit 255
+fi
 
 # modify configurations
 ui_print "* Modifying audio_effects.conf"
