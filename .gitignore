@@ -1,0 +1,7 @@
+# ignore zips
+*.zip
+
+# ignore patches, leftovers, etc.
+*.orig
+*.patch
+*.diff
