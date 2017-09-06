@@ -1,4 +1,4 @@
-## ViPER4Android Magisk v13+ module
+## ViPER4Android Magisk v13 and v14 module
 
 This is a simple V4A module, for no frills setup - you simply grab it, flash it and use it.
 
@@ -10,10 +10,13 @@ Uses ViPER4Android 2.5.0.4 driver and **includes** [ViPER4Android FX Materialize
 
 ## Compatibility
 * Android 5.0 - Android 7.1.2
-* Magisk v13.1 and later (uses template v4)
+* Magisk v13.1 and later (uses template v4/1400)
 * arm, arm64, x86 and x86_64 devices
 
 ## Module changelog
+* 06.09.2017 - Update to template version 1400
+	* New template patchup
+	* Changes in installation logic (removed unecessary unzip)
 * 06.08.2017 - Initial commit. Included changes
 	* Magisk Module Template v4
 	* New update-binary script, based on original one
