@@ -6,4 +6,4 @@ MODDIR=${0%/*}
 # This script will be executed in post-fs-data mode
 # More info in the main Magisk thread
 magiskpolicy --live "allow audioserver audioserver_tmpfs file { read write execute }"
-magiskpolicy --live "allow audioserver audioserver_tmpfs file { read write execute }"
+magiskpolicy --live "allow mediaserver mediaserver_tmpfs file { read write execute }"
