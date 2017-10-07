@@ -16,6 +16,8 @@ Uses ViPER4Android 2.5.0.4 driver and **includes** [ViPER4Android FX Materialize
 * arm, arm64, x86 and x86_64 devices
 
 ## Module changelog
+* 08.10.2017 - Merged SELinux fixes
+	* Thanks to [zertyuiop](https://github.com/zertyuiop/ViPER4Android)
 * 06.09.2017 - Update to template version 1400
 	* New template patchup
 	* Changes in installation logic (removed unecessary unzip)
